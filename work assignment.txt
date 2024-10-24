@@ -1,0 +1,322 @@
+database called ruhande;
+table ngoma;
+hasa
+1.Id int(11)
+2.F_names
+3.L_names
+4.gender
+4.provences
+5.district
+6.sector
+7.cell
+8.address e_mail
+9.telephone number
+
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database Ruhande;
+Query OK, 1 row affected (0.10 sec)
+
+mysql> use Ruhande;
+Database changed
+mysql> create table Ngoma(id int auto_increnment primary key,identity int,F_name varchar(15),L_name varchar(15),Gender varchar(6),Provence varchar(10),District varchar(10), Sector varchar(10),Cell varchar(10),Add_Email varchar(20), Tele_number varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increnment primary key,identity int,F_name varchar(15),L_name varchar(15),G' at line 1
+mysql> create table Ngoma(id int Auto_increnment primary key,identity int,F_name varchar(15),L_name varchar(15),Gender varchar(6),Provence varchar(10),District varchar(10), Sector varchar(10),Cell varchar(10),Add_Email varchar(20), Tele_number varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Auto_increnment primary key,identity int,F_name varchar(15),L_name varchar(15),G' at line 1
+mysql> create table Ngoma(Identity int,F_name varchar(15),L_name varchar(15),Gender varchar(6),Provence varchar(10),District varchar(10), Sector varchar(10),Cell varchar(10),Add_Email varchar(20), Tele_number varchar(10));
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> desc Ngoma;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Identity    | int         | YES  |     | NULL    |       |
+| F_name      | varchar(15) | YES  |     | NULL    |       |
+| L_name      | varchar(15) | YES  |     | NULL    |       |
+| Gender      | varchar(6)  | YES  |     | NULL    |       |
+| Provence    | varchar(10) | YES  |     | NULL    |       |
+| District    | varchar(10) | YES  |     | NULL    |       |
+| Sector      | varchar(10) | YES  |     | NULL    |       |
+| Cell        | varchar(10) | YES  |     | NULL    |       |
+| Add_Email   | varchar(20) | YES  |     | NULL    |       |
+| Tele_number | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+10 rows in set (0.18 sec)
+
+mysql> insert into Ngoma values(1,'onesphore','Twizeyiaman','males','southern','huye','Ngoma','onespho@gmail.com',07809936341);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into Ngoma values(1,'onesphore','Twizeyiaman','males','southern','huye','Ngoma','mukoni','onespho@gmail.com',07809936341);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select* from Ngoma;
++----------+-----------+-------------+--------+----------+----------+--------+--------+-------------------+-------------+
+| Identity | F_name    | L_name      | Gender | Provence | District | Sector | Cell   | Add_Email         | Tele_number |
++----------+-----------+-------------+--------+----------+----------+--------+--------+-------------------+-------------+
+|        1 | onesphore | Twizeyiaman | males  | southern | huye     | Ngoma  | mukoni | onespho@gmail.com | 7809936341  |
++----------+-----------+-------------+--------+----------+----------+--------+--------+-------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Ngoma values(2,'onesmo','bleesing','famales','kigali city','Gasabo','Remera','kaduha','onemo@gmail.com',07809836341);
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> insert into Ngoma values(3,'mukama','lea','famales','southern','nyamagabe','Nyamugari','remera','mukama@gmail.com',079999836341);
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> insert into Ngoma values(4,'enock','munezero','males','northern','musanze','muhoza','bisate','enockmukamaa@gmail.com',07809836341);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> select* from Ngoma;
++----------+-----------+-------------+--------+------------+-----------+-----------+--------+----------------------+-------------+
+| Identity | F_name    | L_name      | Gender | Provence   | District  | Sector    | Cell   | Add_Email            | Tele_number |
++----------+-----------+-------------+--------+------------+-----------+-----------+--------+----------------------+-------------+
+|        1 | onesphore | Twizeyiaman | males  | southern   | huye      | Ngoma     | mukoni | onespho@gmail.com    | 7809936341  |
+|        2 | onesmo    | bleesing    | famale | kigali cit | Gasabo    | Remera    | kaduha | onemo@gmail.com      | 7809836341  |
+|        3 | mukama    | lea         | famale | southern   | nyamagabe | Nyamugari | remera | mukama@gmail.com     | 7999983634  |
+|        4 | enock     | munezero    | males  | northern   | musanze   | muhoza    | bisate | enockmukamaa@gmail.c | 7809836341  |
++----------+-----------+-------------+--------+------------+-----------+-----------+--------+----------------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values(5,'belyse','ashimwe','female','eastern','Kayonza','kabarondo','kinzouvu','belyse@gmail.com',07909936341);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Ngoma values(6,'murekatete','vania','feamle','western','rusizi','bugarama','bushenge','vamurekatetee@gmail.com',07995857);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into Ngoma values(7,'usazama','mumm','famale','southern','huye','bumbongo','bushari','katetee@gmail.com',0799005857);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Ngoma values(8,'eric','oones','famale','southern','muhanga','bugege','burembo','tee@gmail.com',0799000897);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Ngoma values(9,'oresto','muhire','male','','nyabihu','vunga','ururembo','musshumbatee@gmail.com',0799000897);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into Ngoma values(10,'uwamahoro','vava','famale','','bugesera','burande','rembo','humbatee@gmail.com',0799000897);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select* from Ngoma;
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+
+| Identity | F_name     | L_name      | Gender | Provence   | District  | Sector    | Cell     | Add_Email            | Tele_number |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+
+|        1 | onesphore  | Twizeyiaman | males  | southern   | huye      | Ngoma     | mukoni   | onespho@gmail.com    | 7809936341  |
+|        2 | onesmo     | bleesing    | famale | kigali cit | Gasabo    | Remera    | kaduha   | onemo@gmail.com      | 7809836341  |
+|        3 | mukama     | lea         | famale | southern   | nyamagabe | Nyamugari | remera   | mukama@gmail.com     | 7999983634  |
+|        4 | enock      | munezero    | males  | northern   | musanze   | muhoza    | bisate   | enockmukamaa@gmail.c | 7809836341  |
+|        5 | belyse     | ashimwe     | female | eastern    | Kayonza   | kabarondo | kinzouvu | belyse@gmail.com     | 7909936341  |
+|        6 | murekatete | vania       | feamle | western    | rusizi    | bugarama  | bushenge | vamurekatetee@gmail. | 7995857     |
+|        7 | usazama    | mumm        | famale | southern   | huye      | bumbongo  | bushari  | katetee@gmail.com    | 799005857   |
+|        8 | eric       | oones       | famale | southern   | muhanga   | bugege    | burembo  | tee@gmail.com        | 799000897   |
+|        9 | oresto     | muhire      | male   |            | nyabihu   | vunga     | ururembo | musshumbatee@gmail.c | 799000897   |
+|       10 | uwamahoro  | vava        | famale |            | bugesera  | burande   | rembo    | humbatee@gmail.com   | 799000897   |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> update Ngoma set Provence='kigali city' where id=9;
+ERROR 1054 (42S22): Unknown column 'id' in 'where clause'
+mysql> update Ngoma set Provence='kigali city' where identity=9;
+Query OK, 1 row affected, 1 warning (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 1
+
+mysql> update Ngoma set Provence='eastern' where identity=10;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select from ngoma where F_name='mukama' or L_name='lea';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from ngoma where F_name='mukama' or L_name='lea'' at line 1
+mysql> select * from ngoma where F_name='mukama' or L_name='lea';
++----------+--------+--------+--------+----------+-----------+-----------+--------+------------------+-------------+
+| Identity | F_name | L_name | Gender | Provence | District  | Sector    | Cell   | Add_Email        | Tele_number |
++----------+--------+--------+--------+----------+-----------+-----------+--------+------------------+-------------+
+|        3 | mukama | lea    | famale | southern | nyamagabe | Nyamugari | remera | mukama@gmail.com | 7999983634  |
++----------+--------+--------+--------+----------+-----------+-----------+--------+------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from ngoma where F_name='mukama' and L_name='lea';
++----------+--------+--------+--------+----------+-----------+-----------+--------+------------------+-------------+
+| Identity | F_name | L_name | Gender | Provence | District  | Sector    | Cell   | Add_Email        | Tele_number |
++----------+--------+--------+--------+----------+-----------+-----------+--------+------------------+-------------+
+|        3 | mukama | lea    | famale | southern | nyamagabe | Nyamugari | remera | mukama@gmail.com | 7999983634  |
++----------+--------+--------+--------+----------+-----------+-----------+--------+------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from ngoma where F_name='mukama' and L_name='vava';
+Empty set (0.00 sec)
+
+mysql> select * from ngoma where F_name='mukama' or L_name='vava';
++----------+-----------+--------+--------+----------+-----------+-----------+--------+--------------------+-------------+
+| Identity | F_name    | L_name | Gender | Provence | District  | Sector    | Cell   | Add_Email          | Tele_number |
++----------+-----------+--------+--------+----------+-----------+-----------+--------+--------------------+-------------+
+|        3 | mukama    | lea    | famale | southern | nyamagabe | Nyamugari | remera | mukama@gmail.com   | 7999983634  |
+|       10 | uwamahoro | vava   | famale | eastern  | bugesera  | burande   | rembo  | humbatee@gmail.com | 799000897   |
++----------+-----------+--------+--------+----------+-----------+-----------+--------+--------------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> alter table Ngoma add age int(2) after gender;
+Query OK, 10 rows affected, 1 warning (0.42 sec)
+Records: 10  Duplicates: 0  Warnings: 1
+
+mysql> desc Ngoma;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Identity    | int         | YES  |     | NULL    |       |
+| F_name      | varchar(15) | YES  |     | NULL    |       |
+| L_name      | varchar(15) | YES  |     | NULL    |       |
+| Gender      | varchar(6)  | YES  |     | NULL    |       |
+| age         | int         | YES  |     | NULL    |       |
+| Provence    | varchar(10) | YES  |     | NULL    |       |
+| District    | varchar(10) | YES  |     | NULL    |       |
+| Sector      | varchar(10) | YES  |     | NULL    |       |
+| Cell        | varchar(10) | YES  |     | NULL    |       |
+| Add_Email   | varchar(20) | YES  |     | NULL    |       |
+| Tele_number | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> delete age from Ngoma;
+ERROR 1109 (42S02): Unknown table 'age' in MULTI DELETE
+mysql> alter table Ngoma drop age;
+Query OK, 10 rows affected (0.33 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc Ngoma;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Identity    | int         | YES  |     | NULL    |       |
+| F_name      | varchar(15) | YES  |     | NULL    |       |
+| L_name      | varchar(15) | YES  |     | NULL    |       |
+| Gender      | varchar(6)  | YES  |     | NULL    |       |
+| Provence    | varchar(10) | YES  |     | NULL    |       |
+| District    | varchar(10) | YES  |     | NULL    |       |
+| Sector      | varchar(10) | YES  |     | NULL    |       |
+| Cell        | varchar(10) | YES  |     | NULL    |       |
+| Add_Email   | varchar(20) | YES  |     | NULL    |       |
+| Tele_number | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select F_name,gender,Provence from Ngoma;
++------------+--------+------------+
+| F_name     | gender | Provence   |
++------------+--------+------------+
+| onesphore  | males  | southern   |
+| onesmo     | famale | kigali cit |
+| mukama     | famale | southern   |
+| enock      | males  | northern   |
+| belyse     | female | eastern    |
+| murekatete | feamle | western    |
+| usazama    | famale | southern   |
+| eric       | famale | southern   |
+| oresto     | male   | kigali cit |
+| uwamahoro  | famale | eastern    |
++------------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select Identity,F_name,,District from Ngoma;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',District from Ngoma' at line 1
+mysql> select Identity,F_name,District from Ngoma;
++----------+------------+-----------+
+| Identity | F_name     | District  |
++----------+------------+-----------+
+|        1 | onesphore  | huye      |
+|        2 | onesmo     | Gasabo    |
+|        3 | mukama     | nyamagabe |
+|        4 | enock      | musanze   |
+|        5 | belyse     | Kayonza   |
+|        6 | murekatete | rusizi    |
+|        7 | usazama    | huye      |
+|        8 | eric       | muhanga   |
+|        9 | oresto     | nyabihu   |
+|       10 | uwamahoro  | bugesera  |
++----------+------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> select*from Ngoma;
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+
+| Identity | F_name     | L_name      | Gender | Provence   | District  | Sector    | Cell     | Add_Email            | Tele_number |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+
+|        1 | onesphore  | Twizeyiaman | males  | southern   | huye      | Ngoma     | mukoni   | onespho@gmail.com    | 7809936341  |
+|        2 | onesmo     | bleesing    | famale | kigali cit | Gasabo    | Remera    | kaduha   | onemo@gmail.com      | 7809836341  |
+|        3 | mukama     | lea         | famale | southern   | nyamagabe | Nyamugari | remera   | mukama@gmail.com     | 7999983634  |
+|        4 | enock      | munezero    | males  | northern   | musanze   | muhoza    | bisate   | enockmukamaa@gmail.c | 7809836341  |
+|        5 | belyse     | ashimwe     | female | eastern    | Kayonza   | kabarondo | kinzouvu | belyse@gmail.com     | 7909936341  |
+|        6 | murekatete | vania       | feamle | western    | rusizi    | bugarama  | bushenge | vamurekatetee@gmail. | 7995857     |
+|        7 | usazama    | mumm        | famale | southern   | huye      | bumbongo  | bushari  | katetee@gmail.com    | 799005857   |
+|        8 | eric       | oones       | famale | southern   | muhanga   | bugege    | burembo  | tee@gmail.com        | 799000897   |
+|        9 | oresto     | muhire      | male   | kigali cit | nyabihu   | vunga     | ururembo | musshumbatee@gmail.c | 799000897   |
+|       10 | uwamahoro  | vava        | famale | eastern    | bugesera  | burande   | rembo    | humbatee@gmail.com   | 799000897   |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> desc Ngoma;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Identity    | int         | YES  |     | NULL    |       |
+| F_name      | varchar(15) | YES  |     | NULL    |       |
+| L_name      | varchar(15) | YES  |     | NULL    |       |
+| Gender      | varchar(6)  | YES  |     | NULL    |       |
+| Provence    | varchar(10) | YES  |     | NULL    |       |
+| District    | varchar(10) | YES  |     | NULL    |       |
+| Sector      | varchar(10) | YES  |     | NULL    |       |
+| Cell        | varchar(10) | YES  |     | NULL    |       |
+| Add_Email   | varchar(20) | YES  |     | NULL    |       |
+| Tele_number | varchar(10) | YES  |     | NULL    |       |
+| Nationality | varchar(9)  | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> select * from Ngoma;
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+-------------+
+| Identity | F_name     | L_name      | Gender | Provence   | District  | Sector    | Cell     | Add_Email            | Tele_number | Nationality |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+-------------+
+|        1 | onesphore  | Twizeyiaman | males  | southern   | huye      | Ngoma     | mukoni   | onespho@gmail.com    | 7809936341  | NULL        |
+|        2 | onesmo     | bleesing    | famale | kigali cit | Gasabo    | Remera    | kaduha   | onemo@gmail.com      | 7809836341  | NULL        |
+|        3 | mukama     | lea         | famale | southern   | nyamagabe | Nyamugari | remera   | mukama@gmail.com     | 7999983634  | NULL        |
+|        4 | enock      | munezero    | males  | northern   | musanze   | muhoza    | bisate   | enockmukamaa@gmail.c | 7809836341  | NULL        |
+|        5 | belyse     | ashimwe     | female | eastern    | Kayonza   | kabarondo | kinzouvu | belyse@gmail.com     | 7909936341  | NULL        |
+|        6 | murekatete | vania       | feamle | western    | rusizi    | bugarama  | bushenge | vamurekatetee@gmail. | 7995857     | NULL        |
+|        7 | usazama    | mumm        | famale | southern   | huye      | bumbongo  | bushari  | katetee@gmail.com    | 799005857   | NULL        |
+|        8 | eric       | oones       | famale | southern   | muhanga   | bugege    | burembo  | tee@gmail.com        | 799000897   | NULL        |
+|        9 | oresto     | muhire      | male   | kigali cit | nyabihu   | vunga     | ururembo | musshumbatee@gmail.c | 799000897   | NULL        |
+|       10 | uwamahoro  | vava        | famale | eastern    | bugesera  | burande   | rembo    | humbatee@gmail.com   | 799000897   | NULL        |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> update Ngoma set Gender='male' where id=4;
+ERROR 1054 (42S22): Unknown column 'id' in 'where clause'
+mysql> update Ngoma set Gender='male' where Identity=4;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Ngoma;
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+-------------+
+| Identity | F_name     | L_name      | Gender | Provence   | District  | Sector    | Cell     | Add_Email            | Tele_number | Nationality |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+-------------+
+|        1 | onesphore  | Twizeyiaman | males  | southern   | huye      | Ngoma     | mukoni   | onespho@gmail.com    | 7809936341  | NULL        |
+|        2 | onesmo     | bleesing    | famale | kigali cit | Gasabo    | Remera    | kaduha   | onemo@gmail.com      | 7809836341  | NULL        |
+|        3 | mukama     | lea         | famale | southern   | nyamagabe | Nyamugari | remera   | mukama@gmail.com     | 7999983634  | NULL        |
+|        4 | enock      | munezero    | male   | northern   | musanze   | muhoza    | bisate   | enockmukamaa@gmail.c | 7809836341  | NULL        |
+|        5 | belyse     | ashimwe     | female | eastern    | Kayonza   | kabarondo | kinzouvu | belyse@gmail.com     | 7909936341  | NULL        |
+|        6 | murekatete | vania       | feamle | western    | rusizi    | bugarama  | bushenge | vamurekatetee@gmail. | 7995857     | NULL        |
+|        7 | usazama    | mumm        | famale | southern   | huye      | bumbongo  | bushari  | katetee@gmail.com    | 799005857   | NULL        |
+|        8 | eric       | oones       | famale | southern   | muhanga   | bugege    | burembo  | tee@gmail.com        | 799000897   | NULL        |
+|        9 | oresto     | muhire      | male   | kigali cit | nyabihu   | vunga     | ururembo | musshumbatee@gmail.c | 799000897   | NULL        |
+|       10 | uwamahoro  | vava        | famale | eastern    | bugesera  | burande   | rembo    | humbatee@gmail.com   | 799000897   | NULL        |
++----------+------------+-------------+--------+------------+-----------+-----------+----------+----------------------+-------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql>
